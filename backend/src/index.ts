@@ -43,16 +43,6 @@ wss.on('connection', (ws) => {
   }
 
   const clockSender = setInterval(() => {
-    // const rawData: GPSTrackerData = {
-    //   device_id: "tracker123",
-    //   timestamp: "2025-09-24T13:23:03.586120+00:00",
-    //   lat: random0to200(),
-    //   lon: 72.8779,
-    //   speed_kmh: 40.0,
-    //   heading_deg: 45.0,
-    //   altitude_m: 12.3,
-    //   fix: "3D",
-    // }
     const rawData: GPSTrackerData = randomPositionRecent();
     ws.send(JSON.stringify(rawData));
   }, 1750);
